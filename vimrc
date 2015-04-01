@@ -13,13 +13,13 @@ set wildmenu
 
 " Show commands in progress as they're being typed
 set showcmd
- 
+
 " Make backspace behave in a sane manner
 set backspace=indent,eol,start
- 
+
 " Show line numbers
 set number
- 
+
 " Allow hidden buffers, don't limit to 1 file per window/split
 set hidden
 
