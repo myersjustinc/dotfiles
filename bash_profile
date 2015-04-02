@@ -7,6 +7,10 @@ alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 
+if [ -f ${HOME}/.gpg-agent-info ]
+then
+  source ${HOME}/.gpg-agent-info
+fi
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
   source /usr/local/bin/virtualenvwrapper.sh
