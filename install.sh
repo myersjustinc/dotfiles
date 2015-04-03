@@ -30,7 +30,7 @@ ln -s ${REPO_ROOT}/gnupg/sks-keyservers.netCA.pem ${HOME}/.gnupg/sks-keyservers.
 
 # Git configuration
 echo 'Git configuration'
-REAL_NAME=${REAL_NAME} EMAIL_ADDRESS=${EMAIL_ADDRESS} erb gitconfig.erb > ${HOME}/.gitconfig
+REAL_NAME=${REAL_NAME} EMAIL_ADDRESS=${EMAIL_ADDRESS} erb ${REPO_ROOT}/gitconfig.erb > ${HOME}/.gitconfig
 
 # Bash configuration
 echo 'Bash configuration'
