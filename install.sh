@@ -25,6 +25,7 @@ vim +PluginInstall +qall
 echo 'GPG configuration'
 mkdir -p ${HOME}/.gnupg
 ln -s ${REPO_ROOT}/gnupg/gpg.conf ${HOME}/.gnupg/gpg.conf
+ln -s ${REPO_ROOT}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
 ln -s ${REPO_ROOT}/gnupg/sks-keyservers.netCA.pem ${HOME}/.gnupg/sks-keyservers.netCA.pem
 
 # Git configuration

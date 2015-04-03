@@ -7,6 +7,7 @@ rm ${HOME}/.vimrc
 
 echo 'GPG configuration'
 rm ${HOME}/.gnupg/gpg.conf
+rm ${HOME}/.gnupg/gpg-agent.conf
 rm ${HOME}/.gnupg/sks-keyservers.netCA.pem
 
 echo 'Git configuration'
