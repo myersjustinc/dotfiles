@@ -1,20 +1,22 @@
 #!/bin/bash
-echo 'Shell colors'
+echo 'UNINSTALLING'
+
+echo ' Shell colors'
 rm ${HOME}/.solarized
 
-echo 'Vim configuration'
+echo ' Vim configuration'
 rm ${HOME}/.vimrc
 
-echo 'GPG configuration'
+echo ' GPG configuration'
 rm ${HOME}/.gnupg/gpg.conf
 rm ${HOME}/.gnupg/gpg-agent.conf
 rm ${HOME}/.gnupg/sks-keyservers.netCA.pem
 
-echo 'Git configuration'
+echo ' Git configuration'
 rm ${HOME}/.gitconfig
 
-echo 'Bash configuration'
+echo ' Bash configuration'
 rm ${HOME}/.bash_profile
 
-echo 'RVM configuration'
+echo ' RVM configuration'
 rm ${HOME}/.rvmrc
