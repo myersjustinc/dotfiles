@@ -35,3 +35,7 @@ REAL_NAME=${REAL_NAME} EMAIL_ADDRESS=${EMAIL_ADDRESS} erb ${REPO_ROOT}/gitconfig
 # Bash configuration
 echo 'Bash configuration'
 ln -s ${REPO_ROOT}/bash_profile ${HOME}/.bash_profile
+
+# RVM configuration
+echo 'RVM configuration'
+ln -s ${REPO_ROOT}/rvmrc ${HOME}/.rvmrc

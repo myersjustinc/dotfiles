@@ -15,3 +15,6 @@ rm ${HOME}/.gitconfig
 
 echo 'Bash configuration'
 rm ${HOME}/.bash_profile
+
+echo 'RVM configuration'
+rm ${HOME}/.rvmrc
