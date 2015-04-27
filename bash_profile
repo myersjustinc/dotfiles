@@ -20,12 +20,18 @@ fi
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]
 then
   source /usr/local/etc/bash_completion.d/git-completion.bash
+elif [ -f /etc/bash_completion.d/git-prompt ]
+then
+  :  # no-op
 else
   echo "TODO: Install Homebrew's git"
 fi
 if [ -f /usr/local/etc/bash_completion.d/npm ]
 then
   source /usr/local/etc/bash_completion.d/npm
+elif [ -f /etc/bash_completion.d/npm ]
+then
+  :  # no-op
 else
   echo "TODO: Install Homebrew's node/npm"
 fi
