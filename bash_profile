@@ -1,3 +1,9 @@
+if [[ $( uname -s ) -eq "Darwin" ]]; then
+  IS_MAC=1
+else
+  IS_MAC=0
+fi
+
 source ~/.solarized
 
 alias ls="ls -G"
@@ -24,7 +30,7 @@ elif [ -f /etc/bash_completion.d/git-prompt ]
 then
   :  # no-op
 else
-  echo "TODO: Install Homebrew's git"
+  echo "TODO: Install git"
 fi
 if [ -f /usr/local/etc/bash_completion.d/npm ]
 then
@@ -33,7 +39,7 @@ elif [ -f /etc/bash_completion.d/npm ]
 then
   :  # no-op
 else
-  echo "TODO: Install Homebrew's node/npm"
+  echo "TODO: Install node/npm"
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
