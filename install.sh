@@ -1,4 +1,10 @@
 #!/bin/bash
+if [[ $( uname -s ) -eq "Darwin" ]]; then
+  IS_MAC=1
+  GPG2_VERSION=$( brew info --json=v1 gnupg2 | ruby -e 'require "json"; parsed = JSON.parse(STDIN.read); gpg = parsed.select { |pkg| pkg["name"] == "gnupg2" }.first; version = gpg["installed"].last["version"]; STDOUT.write(version)' )
+else
+  IS_MAC=0
+fi
 REPO_ROOT=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Uninstall in case we've run this before
@@ -27,8 +33,8 @@ vim +PluginInstall +qall
 # GPG configuration and keyserver certificate chain
 echo ' GPG configuration'
 mkdir -p ${HOME}/.gnupg
-ln -s ${REPO_ROOT}/gnupg/gpg.conf ${HOME}/.gnupg/gpg.conf
-ln -s ${REPO_ROOT}/gnupg/gpg-agent.conf ${HOME}/.gnupg/gpg-agent.conf
+erb ${REPO_ROOT}/gnupg/gpg.conf.erb > ${HOME}/.gnupg/gpg.conf
+IS_MAC=${IS_MAC} GPG2_VERSION=${GPG2_VERSION} erb ${REPO_ROOT}/gnupg/gpg-agent.conf.erb > ${HOME}/.gnupg/gpg-agent.conf
 ln -s ${REPO_ROOT}/gnupg/sks-keyservers.netCA.pem ${HOME}/.gnupg/sks-keyservers.netCA.pem
 
 # Git configuration

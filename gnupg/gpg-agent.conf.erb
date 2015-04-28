@@ -1,0 +1,12 @@
+<%
+if ENV["IS_MAC"] == "1"
+%>scdaemon-program /usr/local/Cellar/gnupg2/<%= ENV["GPG2_VERSION"] %>/libexec/scdaemon<%
+else
+%>scdaemon-program /usr/lib/gnupg2/scdaemon<%
+end
+%>
+write-env-file
+use-standard-socket
+default-cache-ttl 120
+enable-ssh-support
+default-cache-ttl-ssh 600
