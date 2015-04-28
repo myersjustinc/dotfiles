@@ -1,4 +1,11 @@
 #!/bin/bash
+# Check for Ruby--needed for Homebrew handling and for template rendering
+if [ -z $( which ruby ) ] || [ -z $( which erb ) ]; then
+  echo "FATAL: Ruby not installed properly"
+  exit 1
+fi
+
+# Set useful variables for later
 if [[ $( uname -s ) -eq "Darwin" ]]; then
   IS_MAC=1
   GPG2_VERSION=$( brew info --json=v1 gnupg2 | ruby -e 'require "json"; parsed = JSON.parse(STDIN.read); gpg = parsed.select { |pkg| pkg["name"] == "gnupg2" }.first; version = gpg["installed"].last["version"]; STDOUT.write(version)' )
