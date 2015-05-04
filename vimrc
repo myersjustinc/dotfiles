@@ -119,10 +119,10 @@ colorscheme desert
 " Mark the 80th column in the window for PEP 8 purposes
 set colorcolumn=79
 highlight ColorColumn ctermbg=gray guibg=PaleTurquoise4
-highlight CursorLine ctermbg=Black guibg=Black
 
 " Mark the line currently being edited
 set cursorline
+highlight CursorLine ctermbg=Black guibg=Black
 
 " Change fugitive's gutter colors
 highlight SignColumn guibg=DarkSlateGray
