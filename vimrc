@@ -130,6 +130,9 @@ highlight GitGutterAdd guibg=DarkSlateGray guifg=SeaGreen2
 highlight GitGutterDelete guibg=DarkSlateGray guifg=firebrick3
 highlight GitGutterChange guibg=DarkSlateGray guifg=DodgerBlue1
 
+" Back off on vertical split color
+highlight VertSplit ctermbg=Black guibg=Black
+
 " Always cd to current file's directory
 " Apparently conflicts with some plugins, so watch out
 set autochdir
