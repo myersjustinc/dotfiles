@@ -133,6 +133,9 @@ highlight GitGutterChange guibg=DarkSlateGray guifg=DodgerBlue1
 " Back off on vertical split color
 highlight VertSplit ctermbg=Black guibg=Black
 
+" Ignore temp/OS/dependency files in CtrlP and other situations
+set wildignore+=*/tmp/*,*/.tmp/*,*/node_modules/*,.DS_Store,*/.git/*
+
 " Always cd to current file's directory
 " Apparently conflicts with some plugins, so watch out
 set autochdir
