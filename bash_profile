@@ -1,4 +1,4 @@
-if [[ $( uname -s ) -eq "Darwin" ]]; then
+if [[ $( uname -s ) == "Darwin" ]]; then
   IS_MAC=1
 else
   IS_MAC=0
