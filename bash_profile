@@ -6,7 +6,11 @@ fi
 
 source ~/.solarized
 
-alias ls="ls -G"
+if [[ $IS_MAC == 1 ]]; then
+  alias ls="ls -G"
+else
+  alias ls="ls --color=always"
+fi
 alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
