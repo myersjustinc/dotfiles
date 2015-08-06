@@ -55,7 +55,7 @@ set autoindent
 
 " Set folding options
 set foldmethod=indent
-set foldnestmax=6
+set foldnestmax=16
 
 " Disable word wrap
 set nowrap
