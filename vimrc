@@ -139,3 +139,6 @@ set wildignore+=*/tmp/*,*/.tmp/*,*/node_modules/*,.DS_Store,*/.git/*
 " Always cd to current file's directory
 " Apparently conflicts with some plugins, so watch out
 set autochdir
+
+" Map a :nohl shortcut since I use that so often
+nnoremap <Leader>n :nohlsearch<CR>
