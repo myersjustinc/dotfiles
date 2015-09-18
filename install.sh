@@ -21,8 +21,14 @@ ${REPO_ROOT}/uninstall.sh
 echo 'INSTALLING'
 
 # Prompt for useful variables
-read -p ' What is your name? ' REAL_NAME
-read -p ' What is your email address? ' EMAIL_ADDRESS
+REAL_NAME=$1
+if [ -z "${REAL_NAME}" ]; then
+  read -p ' What is your name? ' REAL_NAME
+fi
+EMAIL_ADDRESS=$2
+if [ -z "${EMAIL_ADDRESS}" ]; then
+  read -p ' What is your email address? ' EMAIL_ADDRESS
+fi
 
 # Shell colors
 echo ' Shell colors'
