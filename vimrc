@@ -142,3 +142,6 @@ set autochdir
 
 " Map a :nohl shortcut since I use that so often
 nnoremap <Leader>n :nohlsearch<CR>
+
+" Map a shortcut to make existing vertical split wide enough to read
+nnoremap <Leader>r :vertical resize 90<CR>
