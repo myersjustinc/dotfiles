@@ -54,6 +54,10 @@ ln -s ${REPO_ROOT}/gnupg/sks-keyservers.netCA.pem ${HOME}/.gnupg/sks-keyservers.
 echo ' Git configuration'
 REAL_NAME=${REAL_NAME} EMAIL_ADDRESS=${EMAIL_ADDRESS} erb ${REPO_ROOT}/gitconfig.erb > ${HOME}/.gitconfig
 
+# IRB configuration
+echo ' IRB configuration'
+ln -s ${REPO_ROOT}/irbrc ${HOME}/.irbrc
+
 # Bash configuration
 echo ' Bash configuration'
 ln -s ${REPO_ROOT}/bash_profile ${HOME}/.bash_profile

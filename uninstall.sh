@@ -15,6 +15,9 @@ rm ${HOME}/.gnupg/sks-keyservers.netCA.pem
 echo ' Git configuration'
 rm ${HOME}/.gitconfig
 
+echo ' IRB configuration'
+rm ${HOME}/.irbrc
+
 echo ' Bash configuration'
 rm ${HOME}/.bash_profile
 
