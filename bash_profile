@@ -15,7 +15,7 @@ alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/s
 alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 export EDITOR=vim
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 if [ -f ${HOME}/.gpg-agent-info ]
 then
