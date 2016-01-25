@@ -106,10 +106,12 @@ let g:vim_markdown_folding_disabled=1
 " Finish Vundle initialization
 call vundle#end()
 
-" Enable file type detection and do language-dependent indenting
+" Enable file type detection, add some new file types and do language-dependent
+" indenting
 filetype plugin indent on
 autocmd Filetype python setlocal shiftwidth=4 softtabstop=4
 autocmd Filetype markdown setlocal shiftwidth=4 softtabstop=4
+autocmd BufRead,BufNewFile *.thor set filetype=ruby
 
 " Configure solarized
 syntax on
