@@ -741,7 +741,7 @@
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>475429088.17233199</real>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
