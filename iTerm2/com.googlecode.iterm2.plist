@@ -110,7 +110,11 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 132 924 485 0 0 2560 1417 </string>
+	<string>-1589 485 924 485 -1680 199 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>0 669 1050 748 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-1920 -123 1920 1161 -1920 -139 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -736,10 +740,12 @@
 			<string>/Users/idguser</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>475429088.17196703</real>
+	<real>477591387.90659899</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>475429088.17233199</real>
+	<real>486396318.925188</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -802,7 +808,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-25T15:38:06Z</date>
+	<date>2016-06-01T14:10:08Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -833,12 +839,20 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
+	<key>WebKitDefaultFontSize</key>
+	<integer>11</integer>
+	<key>WebKitStandardFont</key>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>2.1.4</string>
 </dict>
