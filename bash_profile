@@ -49,3 +49,12 @@ fi
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -f $PYENV_ROOT/bin/pyenv ]
+then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+else
+  :  # no-op
+fi
