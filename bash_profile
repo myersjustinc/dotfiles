@@ -12,6 +12,7 @@ else
   alias ls="ls --color=always"
 fi
 alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias postgresup-public='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-h 0.0.0.0" start'
 alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 export EDITOR=vim
