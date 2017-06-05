@@ -8,7 +8,7 @@ fi
 # Set useful variables for later
 if [[ $( uname -s ) == "Darwin" ]]; then
   IS_MAC=1
-  GPG2_VERSION=$( brew info --json=v1 gnupg2 | ruby -e 'require "json"; parsed = JSON.parse(STDIN.read); gpg = parsed.select { |pkg| pkg["name"] == "gnupg2" }.first; version = gpg["installed"].last["version"]; STDOUT.write(version)' )
+  GPG2_VERSION=$( brew info --json=v1 gnupg2 | ruby -e 'require "json"; parsed = JSON.parse(STDIN.read); gpg = parsed.select { |pkg| pkg["name"] == "gnupg2" || pkg["name"] == "gnupg" }.first; version = gpg["installed"].last["version"]; STDOUT.write(version)' )
 else
   IS_MAC=0
 fi
