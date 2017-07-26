@@ -93,6 +93,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'danro/rename.vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/yajs.vim'
 
 " Configure airline
 set laststatus=2
