@@ -14,6 +14,7 @@ fi
 alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresup-public='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-h 0.0.0.0" start'
 alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias ip-address="ifconfig | grep -Eo 'inet [0-9.]+' | grep -Eo '[0-9.]+' | grep -vF '127.0.0.1' | cat"
 
 export EDITOR=vim
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
