@@ -68,6 +68,8 @@
 	<integer>0</integer>
 	<key>HotkeyCode</key>
 	<integer>0</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>0</integer>
 	<key>IRMemory</key>
@@ -117,13 +119,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>197 852 606 456 0 0 2560 1417 </string>
+	<string>197 939 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 788 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 77 606 456 0 0 2560 1417 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>158 138 918 512 0 0 2560 1417 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 669 1050 748 0 0 2560 1417 </string>
+	<string>-1 667 1050 750 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>220 669 1050 748 0 0 2560 1417 </string>
+	<string>1 669 1050 748 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -753,6 +761,8 @@
 	<true/>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>0CFABC68-2792-4408-BCCC-786FC7C46F18</string>
 	<key>NoSyncLastTipTime</key>
@@ -839,7 +849,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-20T14:03:26Z</date>
+	<date>2017-09-19T14:17:15Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -862,6 +872,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1504881152</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -885,6 +897,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.2</string>
+	<string>3.1.0</string>
 </dict>
 </plist>
