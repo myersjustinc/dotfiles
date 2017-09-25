@@ -25,6 +25,7 @@ then
 fi
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
+  export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python2'
   source /usr/local/bin/virtualenvwrapper.sh
 else
   echo 'TODO: Install virtualenvwrapper'
