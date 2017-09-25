@@ -1,13 +1,11 @@
 <%
 if ENV["IS_MAC"] == "1"
-%>scdaemon-program /usr/local/Cellar/gnupg/<%= ENV["GPG2_VERSION"] %>/libexec/scdaemon
+%>scdaemon-program /usr/local/MacGPG2/libexec/scdaemon
 pinentry-program /usr/local/bin/pinentry-mac<%
 else
 %>scdaemon-program /usr/lib/gnupg2/scdaemon<%
 end
 %>
-write-env-file
-use-standard-socket
 default-cache-ttl 120
 enable-ssh-support
 default-cache-ttl-ssh 600
