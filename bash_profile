@@ -22,9 +22,11 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -f ${HOME}/.gpg-agent-info ]
 then
   source ${HOME}/.gpg-agent-info
-elif [ -S ${HOME}/.gnupg/S.gpg-agent.ssh ]
+elif [ -e ${HOME}/.gnupg/S.gpg-agent.ssh ]
 then
   export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
+else
+  eval "$( gpg-agent --daemon )"
 fi
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
