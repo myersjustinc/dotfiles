@@ -20,6 +20,7 @@ rm ${HOME}/.irbrc
 
 echo ' Bash configuration'
 rm ${HOME}/.bash_profile
+rm ${HOME}/.bashrc
 
 echo ' RVM configuration'
 rm ${HOME}/.rvmrc

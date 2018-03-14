@@ -61,6 +61,7 @@ ln -s ${REPO_ROOT}/irbrc ${HOME}/.irbrc
 # Bash configuration
 echo ' Bash configuration'
 ln -s ${REPO_ROOT}/bash_profile ${HOME}/.bash_profile
+ln -s ${REPO_ROOT}/bashrc ${HOME}/.bashrc
 
 # RVM configuration
 echo ' RVM configuration'
