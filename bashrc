@@ -17,7 +17,7 @@ alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias ip-address="ifconfig | grep -Eo 'inet [0-9.]+' | grep -Eo '[0-9.]+' | grep -vF '127.0.0.1' | cat"
 
 export EDITOR=vim
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=${HOME}/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 if [ -f ${HOME}/.gpg-agent-info ]
 then
