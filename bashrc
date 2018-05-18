@@ -89,12 +89,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Load pewtwo if we're on a machine with that installed (usually by pipenv).
-pewtwo_path=$( which pewtwo )
-if [ -z ${pewtwo_path} ]
-then
-  source $(pewtwo shell_config)
-else
-  :  # no-op
-fi
