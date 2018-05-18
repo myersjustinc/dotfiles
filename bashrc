@@ -16,9 +16,15 @@ else
 fi
 
 # Add handy Postgres aliases for local development.
-alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias postgresup-public='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-h 0.0.0.0" start'
-alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+pg_ctl_path=$( which pg_ctl )
+if [ ! -z ${pg_ctl_path} ]
+then
+  alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+  alias postgresup-public='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-h 0.0.0.0" start'
+  alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+else
+  :  # no-op
+fi
 
 # Make it easier to determine this machine's IP address.
 alias ip-address="ifconfig | grep -Eo 'inet [0-9.]+' | grep -Eo '[0-9.]+' | grep -vF '127.0.0.1' | cat"
