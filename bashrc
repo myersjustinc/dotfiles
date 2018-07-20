@@ -42,11 +42,8 @@ export PATH=${HOME}/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 if [ -f ${HOME}/.gpg-agent-info ]
 then
   source ${HOME}/.gpg-agent-info
-elif [ -e ${HOME}/.gnupg/S.gpg-agent.ssh ]
-then
-  export SSH_AUTH_SOCK=${HOME}/.gnupg/S.gpg-agent.ssh
 else
-  eval "$( gpg-agent --daemon )"
+  export SSH_AUTH_SOCK="$( gpgconf --list-dirs agent-ssh-socket )"
 fi
 
 # Handle legacy virtualenvwrapper setup for machines where I'm still using it.
