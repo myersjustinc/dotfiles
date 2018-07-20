@@ -29,7 +29,7 @@ else
 fi
 
 # Make it easier to determine this machine's IP address.
-alias ip-address="ifconfig | grep -Eo 'inet [0-9.]+' | grep -Eo '[0-9.]+' | grep -vF '127.0.0.1' | cat"
+alias ip-address="/sbin/ifconfig | grep -Eo 'inet (addr:)?[0-9.]+' | grep -Eo '[0-9.]+' | grep -vF '127.0.0.1' | cat"
 
 # Use Vim by default. This likely is the default anyway, but might as well be
 # explicit.
