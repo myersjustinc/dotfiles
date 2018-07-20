@@ -29,8 +29,14 @@ set history=100
 " Set color scheme
 colorscheme desert
 
-" Set font for MacVim
-set guifont=Source_Code_Pro:h22
+" Set font for gvim
+if has("gui_running")
+  if has("gui_macvim")
+    set guifont=Source_Code_Pro:h22
+  else
+    set guifont=Source\ Code\ Pro\ 22
+  endif
+endif
 
 " Default to Unicode
 set encoding=utf-8
