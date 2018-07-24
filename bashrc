@@ -44,6 +44,9 @@ then
   source ${HOME}/.gpg-agent-info
 else
   export SSH_AUTH_SOCK="$( gpgconf --list-dirs agent-ssh-socket )"
+  if [ ! -S ${SSH_AUTH_SOCK} ]; then
+    eval "$( gpg-agent --daemon )"
+  fi
 fi
 
 # Handle legacy virtualenvwrapper setup for machines where I'm still using it.
