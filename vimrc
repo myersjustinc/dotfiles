@@ -33,6 +33,8 @@ colorscheme desert
 if has("gui_running")
   if has("gui_macvim")
     set guifont=Source_Code_Pro:h22
+  elseif has("win64") || has("win32") || has("win16")
+    set guifont=Source\ Code\ Pro:h14
   else
     set guifont=Source\ Code\ Pro\ 22
   endif
