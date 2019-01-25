@@ -103,6 +103,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'danro/rename.vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Configure airline
 set laststatus=2
@@ -142,6 +143,10 @@ highlight SignColumn guibg=DarkSlateGray
 highlight GitGutterAdd guibg=DarkSlateGray guifg=SeaGreen2
 highlight GitGutterDelete guibg=DarkSlateGray guifg=firebrick3
 highlight GitGutterChange guibg=DarkSlateGray guifg=DodgerBlue1
+
+" Add recommended settings to help editorconfig and fugitive play nicely
+" together
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Back off on vertical split color
 highlight VertSplit ctermbg=Black guibg=Black
