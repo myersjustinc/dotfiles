@@ -104,6 +104,7 @@ Plugin 'danro/rename.vim'
 Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'niklasl/vim-rdf'
 
 " Configure airline
 set laststatus=2
