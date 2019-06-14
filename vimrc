@@ -88,6 +88,10 @@ set nowb
 set splitbelow
 set splitright
 
+" Disable modelines for security reasons
+set modelines=0
+set nomodeline
+
 " Specify plugins
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-repeat'
