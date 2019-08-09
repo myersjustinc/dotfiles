@@ -8,6 +8,9 @@ fi
 # Source my customized (Solarized-based) prompt.
 source ~/.solarized
 
+# Adjust how bash command history is recorded
+export HISTCONTROL='ignorespace'
+
 # Use color in `ls` output.
 if [[ $IS_MAC == 1 ]]; then
   alias ls="ls -G"
