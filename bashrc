@@ -77,6 +77,14 @@ else
   :  # no-op
 fi
 
+# Load Ubuntu bash-completion if available.
+if [ -f /usr/share/bash-completion/bash_completion ]
+then
+  source /usr/share/bash-completion/bash_completion
+else
+  :  # no-op
+fi
+
 # Load version managers for Ruby (rvm), Python (pyenv) and Node.js (nvm,
 # later), depending on which ones are installed.
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
