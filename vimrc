@@ -26,9 +26,6 @@ set hidden
 " Increase stored command history
 set history=100
 
-" Set color scheme
-colorscheme desert
-
 " Set font for gvim
 if has("gui_running")
   if has("gui_macvim")
@@ -130,8 +127,8 @@ autocmd Filetype python setlocal shiftwidth=4 softtabstop=4
 autocmd Filetype markdown setlocal shiftwidth=4 softtabstop=4
 autocmd BufRead,BufNewFile *.thor set filetype=ruby
 
-" Configure solarized
-syntax on
+" Configure colors
+syntax enable
 set background=dark
 colorscheme desert
 
@@ -155,6 +152,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " Back off on vertical split color
 highlight VertSplit ctermbg=Black guibg=Black
+
+" Properly highlight opening characters in Markdown headers
+highlight mkdHeading ctermfg=5 gui=bold guifg=indianred
 
 " Ignore temp/OS/dependency files in CtrlP and other situations
 set wildignore+=*/tmp/*,*/.tmp/*,*/node_modules/*,.DS_Store,*/.git/*
