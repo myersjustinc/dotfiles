@@ -48,6 +48,29 @@
 	<false/>
 	<key>FsTabDelay</key>
 	<real>1</real>
+	<key>GlobalTouchBarMap</key>
+	<dict>
+		<key>touchbar:22FDB5EE-01A7-4D41-8CA4-30CEC1B6F241</key>
+		<dict>
+			<key>Action</key>
+			<integer>25</integer>
+			<key>Label</key>
+			<string>⌘V⏩</string>
+			<key>Text</key>
+			<string>Paste Faster
+Paste Special.Paste Faster</string>
+		</dict>
+		<key>touchbar:B06441A8-C92B-40C9-9A34-8F7BD5E719AD</key>
+		<dict>
+			<key>Action</key>
+			<integer>25</integer>
+			<key>Label</key>
+			<string>⌘V🐢</string>
+			<key>Text</key>
+			<string>Paste Slowly
+Paste Special.Paste Slowly</string>
+		</dict>
+	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HiddenAFRStrokeThickness</key>
@@ -81,6 +104,8 @@
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
+	<true/>
+	<key>KillSessionsOnLogout</key>
 	<true/>
 	<key>LeftCommand</key>
 	<integer>7</integer>
@@ -135,10 +160,34 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSTouchBarConfig: regular</key>
+	<dict>
+		<key>CurrentItems</key>
+		<array>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>touchbar:B06441A8-C92B-40C9-9A34-8F7BD5E719AD</string>
+			<string>touchbar:22FDB5EE-01A7-4D41-8CA4-30CEC1B6F241</string>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>iTermTouchBarFunctionKeysScrollView</string>
+			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
+		</array>
+		<key>DefaultItems</key>
+		<array>
+			<string>iTermTouchBarIdentifierManPage</string>
+			<string>iTermTouchBarIdentifierColorPreset</string>
+			<string>iTermTouchBarIdentifierFunctionKeys</string>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
+			<string>iTermTouchBarIdentifierAddMark</string>
+			<string>iTermTouchBarIdentifierPreviousMark</string>
+			<string>iTermTouchBarIdentifierNextMark</string>
+		</array>
+	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 163 224 275 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 277 1065 750 0 0 1680 1027 </string>
+	<string>0 277 1065 750 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -771,18 +820,20 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{518, 843}</string>
+		<string>{278, 798}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>6AFA19ED-5568-441C-83D3-157A90855D8F</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>4</integer>
+	<integer>6</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>591713541.18038595</real>
+	<real>591802821.47819698</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -1134,6 +1185,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.terminalIconName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -1524,6 +1583,10 @@
 	<string>/Users/jmyers/misc/dotfiles/iTerm2</string>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>QuickPasteBytesPerCall</key>
+	<integer>1728</integer>
+	<key>QuickPasteDelayBetweenCalls</key>
+	<real>0.0044444440864026546</real>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>RightCommand</key>
@@ -1541,7 +1604,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-30T14:14:27Z</date>
+	<date>2019-10-01T14:14:28Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
