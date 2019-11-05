@@ -106,6 +106,7 @@ Plugin 'othree/html5.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'niklasl/vim-rdf'
+Plugin 'ap/vim-css-color'
 
 " Configure airline
 set laststatus=2
