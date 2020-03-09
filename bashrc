@@ -96,6 +96,7 @@ then
   export PATH="$PYENV_ROOT/bin:$PATH"
   export PIPX_BIN_DIR="${HOME}/.local/bin"
   eval "$(pyenv init -)"
+  export PATH="$PIPX_BIN_DIR:$PATH"
 else
   :  # no-op
 fi
