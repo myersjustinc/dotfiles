@@ -20,6 +20,9 @@ else
   export LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 fi
 
+# Avoid clearing the screen upon exiting `less`.
+alias less="less -X"
+
 # Add handy Postgres aliases for local development.
 pg_ctl_path=$( which pg_ctl )
 if [ ! -z ${pg_ctl_path} ]
