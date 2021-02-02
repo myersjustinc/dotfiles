@@ -79,4 +79,17 @@ function virtualenv_info(){
 # disable the default virtualenv prompt change
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-PS1="\[$CYAN\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$MAGENTA\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\[$GREEN\]\$(virtualenv_info)\[$YELLOW\]\$ \[$RESET\]"
+function k8s_context() {
+  if [[ -n "${PS1_SHOW_K8S_CONTEXT}" ]]; then
+    if [[ -x "$(which kubectl)" ]]; then
+      context="$(kubectl config current-context)"
+    else
+      context=''
+    fi
+  else
+    context=''
+  fi
+  [[ -n "${context}" ]] && echo "<${context}> "
+}
+
+PS1="\[$CYAN\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$MAGENTA\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\[$GREEN\]\$(virtualenv_info)\[\[$VIOLET\]\$(k8s_context)$YELLOW\]\$ \[$RESET\]"
