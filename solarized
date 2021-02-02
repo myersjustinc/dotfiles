@@ -1,8 +1,8 @@
-# Sexy Solarized Bash Prompt, inspired by "Extravagant Zsh Prompt"
-# Screenshot: http://img.gf3.ca/d54942f474256ec26a49893681c49b5a.png
+# Solarized-based bash prompt
 
-# Based on http://seanponeil.com/blog/2012/09/13/sexy-solarized-bash-prompt/
+# Based on https://bit.ly/39HPhpc
 # Virtualenv mods from http://stackoverflow.com/a/20026992
+# Kubernetes mods by Justin Myers
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp
 gnome-256color >/dev/null 2>&1; then TERM=gnome-256color; fi
