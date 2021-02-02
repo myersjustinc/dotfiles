@@ -82,7 +82,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 function k8s_context() {
   if [[ -n "${PS1_SHOW_K8S_CONTEXT}" ]]; then
     if [[ -x "$(which kubectl)" ]]; then
-      context="$(kubectl config current-context)"
+      context="$(kubectl config current-context | cut -c1-20)"
     else
       context=''
     fi
