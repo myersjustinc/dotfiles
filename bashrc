@@ -97,8 +97,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ -f $PYENV_ROOT/bin/pyenv ]
 then
   export PIPX_BIN_DIR="${HOME}/.local/bin"
-  eval "$(pyenv init --path)"
   export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PIPX_BIN_DIR:$PATH"
+  eval "$(pyenv init --path)"
 else
   :  # no-op
 fi
