@@ -146,6 +146,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+if [[ $IS_WIN == 1 ]]; then
+  host_ip="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')"
+  export DISPLAY="${host_ip}:0"
+fi
+
 # Load machine-specific settings, if applicable.
 if [ -f "$HOME/.bashrc_local" ]
 then
