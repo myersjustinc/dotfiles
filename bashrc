@@ -1,8 +1,16 @@
-# Prepare to handle Mac-specific config differences if we're on such a machine.
+# Prepare to handle Mac-specific or Windows-specific config differences if
+# we're on such a machine.
 if [[ $( uname -s ) == "Darwin" ]]; then
   export IS_MAC=1
+  export IS_WIN=0
 else
   export IS_MAC=0
+  wsl_test="$(uname -r | grep -Foi -- 'WSL')"
+  if [[ $? -eq 0 ]]; then
+    export IS_WIN=1
+  else
+    export IS_WIN=0
+  fi
 fi
 
 # Source my customized (Solarized-based) prompt.
@@ -45,13 +53,44 @@ export EDITOR=vim
 export PATH=${HOME}/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Configure GPG and SSH.
-if [ -f ${HOME}/.gpg-agent-info ]
-then
-  source ${HOME}/.gpg-agent-info
+if [[ $IS_WIN == 1 ]]; then
+  # $ powershell.exe '$env:UserName'
+  # justi
+  # $ powershell.exe '$env:HomePath'
+  # \Users\justi
+  # $ powershell.exe '$env:HomeDrive'
+  # C:
+  wsl2_ssh_pageant_path="${HOME}/.ssh/wsl2-ssh-pageant.exe"
+  win_home_drive="$(powershell.exe '$env:HomeDrive')"
+  win_home_path="$(powershell.exe '$env:HomePath' | sed 's=\\=/=g')"
+  gpg_config_path="${win_home_drive}${win_home_path}/AppData/Local/gnupg"
+  export SSH_AUTH_SOCK="${HOME}/.ssh/agent.sock"
+  export GPG_AGENT_SOCK="${HOME}/.gnupg/S.gpg-agent"
+  ss -a | grep -q "${SSH_AUTH_SOCK}"
+  if [ $? -ne 0 ]; then
+    rm -f "${SSH_AUTH_SOCK}"
+    setsid nohup socat \
+      "UNIX-LISTEN:${SSH_AUTH_SOCK},fork" \
+      "EXEC:${wsl2_ssh_pageant_path}" \
+      &>/dev/null &
+  fi
+  ss -a | grep -q "${GPG_AGENT_SOCK}"
+  if [ $? -ne 0 ]; then
+    rm -rf "${GPG_AGENT_SOCK}"
+    setsid nohup socat \
+      "UNIX-LISTEN:${GPG_AGENT_SOCK},fork" \
+      "EXEC:'${wsl2_ssh_pageant_path} --gpgConfigBasepath "${gpg_config_path}" --gpg S.gpg-agent'" \
+      &>/dev/null &
+  fi
 else
-  export SSH_AUTH_SOCK="$( gpgconf --list-dirs agent-ssh-socket )"
-  if [ ! -S ${SSH_AUTH_SOCK} ]; then
-    eval "$( gpg-agent --daemon )"
+  if [ -f ${HOME}/.gpg-agent-info ]
+  then
+    source ${HOME}/.gpg-agent-info
+  else
+    export SSH_AUTH_SOCK="$( gpgconf --list-dirs agent-ssh-socket )"
+    if [ ! -S ${SSH_AUTH_SOCK} ]; then
+      eval "$( gpg-agent --daemon )"
+    fi
   fi
 fi
 
