@@ -107,6 +107,8 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'niklasl/vim-rdf'
 Plugin 'ap/vim-css-color'
+Plugin 'pangloss/vim-javascript'
+Plugin 'evanleck/vim-svelte'
 
 " Configure airline
 set laststatus=2
