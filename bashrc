@@ -151,6 +151,11 @@ if [[ $IS_WIN == 1 ]]; then
   export DISPLAY="${host_ip}:0"
 fi
 
+if [ -f "${HOME}/.cargo/env" ]
+then
+  source "${HOME}/.cargo/env"
+fi
+
 # Load machine-specific settings, if applicable.
 if [ -f "$HOME/.bashrc_local" ]
 then
