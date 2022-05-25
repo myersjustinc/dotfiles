@@ -1,5 +1,7 @@
 require "fileutils"
 
+IRB.conf[:USE_AUTOCOMPLETE] = false
+
 IRB.conf[:SAVE_HISTORY] = 1000
 
 virtual_env = ENV["VIRTUAL_ENV"]
