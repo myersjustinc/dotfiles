@@ -127,6 +127,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'pangloss/vim-javascript'
 Plugin 'evanleck/vim-svelte'
 Plugin 'jvirtanen/vim-hcl'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Configure airline
 set laststatus=2
