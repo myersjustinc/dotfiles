@@ -151,6 +151,13 @@ if [[ $IS_WIN == 1 ]]; then
   export DISPLAY="${host_ip}:0"
 fi
 
+alias random-digits="\
+  python -c 'if True:\
+    from random import randint; \
+    import sys; \
+    digits = int(sys.argv[1] if (len(sys.argv) > 1) else 6); \
+    print(\"\".join(str(randint(0, 9)) for n in range(digits)))'"
+
 if [ -f "${HOME}/.cargo/env" ]
 then
   source "${HOME}/.cargo/env"
