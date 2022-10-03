@@ -92,4 +92,4 @@ function k8s_context() {
   [[ -n "${context}" ]] && echo "<${context}> "
 }
 
-PS1="\[$CYAN\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$MAGENTA\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\[$GREEN\]\$(virtualenv_info)\[$VIOLET\]\$(k8s_context)\[$YELLOW\]\$ \[$RESET\]"
+PS1="\[$CYAN\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$MAGENTA\]\w\[$BASE0\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")\[$YELLOW\]\$(parse_git_branch)\[$BASE0\]\n\[$GREEN\]\$(virtualenv_info)\[$VIOLET\]\$(k8s_context)\[$YELLOW\]\\$ \[$RESET\]"
