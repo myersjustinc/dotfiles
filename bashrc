@@ -32,12 +32,30 @@ fi
 alias less="less -X"
 
 # Add handy Postgres aliases for local development.
-pg_ctl_path=$( which pg_ctl )
-if [ ! -z ${pg_ctl_path} ]
+export PG_CTL_PATH=$( which pg_ctl )
+if [ ! -z ${PG_CTL_PATH} ]
 then
-  alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-  alias postgresup-public='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log -o "-h 0.0.0.0" start'
-  alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+  pg_db_dir='/usr/local/var/postgres'
+  postgresup() {
+    "${PG_CTL_PATH}" \
+      -D "${pg_db_dir}" \
+      -l "${pg_db_dir}/server.log" \
+      start
+  }
+  postgresup-public() {
+    "${PG_CTL_PATH}" \
+      -D "${pg_db_dir}" \
+      -l "${pg_db_dir}/server.log" \
+      -o '-h 0.0.0.0' \
+      start
+  }
+  postgresdown() {
+    "${PG_CTL_PATH}" \
+      -D "${pg_db_dir}" \
+      stop \
+      -s \
+      -m fast
+  }
 else
   :  # no-op
 fi
