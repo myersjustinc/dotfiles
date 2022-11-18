@@ -81,6 +81,7 @@ set foldnestmax=16
 
 " Disable word wrap
 set nowrap
+set formatoptions-=t
 
 " Add position indicator to bottom right
 set ruler
