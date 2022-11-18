@@ -196,10 +196,3 @@ nnoremap <Leader>n :nohlsearch<CR>
 
 " Map a shortcut to make existing vertical split wide enough to read
 nnoremap <Leader>r :vertical resize 90<CR>
-
-" Center a string with spaces on either side, like I often do in comments
-function! CenterString(to_center)
-  let margin = (&textwidth - (strlen(a:to_center) + 2)) / 2
-  execute 'normal! ' . '0' . margin . 'l'
-  execute 'normal! ' . 'R' . ' ' . a:to_center . ' ' . "\<esc>"
-endfunction
