@@ -35,23 +35,23 @@ alias less="less -X"
 export PG_CTL_PATH=$( which pg_ctl )
 if [ ! -z ${PG_CTL_PATH} ]
 then
-  pg_db_dir='/usr/local/var/postgres'
+  export PG_DB_DIR='/usr/local/var/postgres'
   postgresup() {
     "${PG_CTL_PATH}" \
-      -D "${pg_db_dir}" \
-      -l "${pg_db_dir}/server.log" \
+      -D "${PG_DB_DIR}" \
+      -l "${PG_DB_DIR}/server.log" \
       start
   }
   postgresup-public() {
     "${PG_CTL_PATH}" \
-      -D "${pg_db_dir}" \
-      -l "${pg_db_dir}/server.log" \
+      -D "${PG_DB_DIR}" \
+      -l "${PG_DB_DIR}/server.log" \
       -o '-h 0.0.0.0' \
       start
   }
   postgresdown() {
     "${PG_CTL_PATH}" \
-      -D "${pg_db_dir}" \
+      -D "${PG_DB_DIR}" \
       stop \
       -s \
       -m fast
