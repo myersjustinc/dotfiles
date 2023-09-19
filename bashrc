@@ -68,7 +68,7 @@ alias ip-address="/sbin/ifconfig | grep -Eo 'inet (addr:)?[0-9.]+' | grep -Eo '[
 export EDITOR=vim
 
 # Set the $PATH to include things from pipsi and Homebrew.
-export PATH=${HOME}/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=${HOME}/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$PATH
 
 # Configure GPG and SSH.
 if [[ $IS_WIN == 1 ]]; then

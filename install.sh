@@ -8,6 +8,7 @@ fi
 # Set useful variables for later
 if [[ $( uname -s ) == "Darwin" ]]; then
   IS_MAC=1
+  HOMEBREW_PREFIX="$(brew --prefix)"
 else
   IS_MAC=0
 fi
@@ -46,7 +47,7 @@ vim +PluginInstall +qall
 echo ' GPG configuration'
 mkdir -p ${HOME}/.gnupg
 erb ${REPO_ROOT}/gnupg/gpg.conf.erb > ${HOME}/.gnupg/gpg.conf
-IS_MAC=${IS_MAC} erb ${REPO_ROOT}/gnupg/gpg-agent.conf.erb > ${HOME}/.gnupg/gpg-agent.conf
+IS_MAC=${IS_MAC} HOMEBREW_PREFIX=${HOMEBREW_PREFIX} erb ${REPO_ROOT}/gnupg/gpg-agent.conf.erb > ${HOME}/.gnupg/gpg-agent.conf
 ln -s ${REPO_ROOT}/gnupg/sks-keyservers.netCA.pem ${HOME}/.gnupg/sks-keyservers.netCA.pem
 
 # Git configuration

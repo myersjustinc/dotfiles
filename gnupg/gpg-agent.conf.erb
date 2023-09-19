@@ -1,7 +1,6 @@
 <%
 if ENV["IS_MAC"] == "1"
-%>scdaemon-program /usr/local/MacGPG2/libexec/scdaemon
-pinentry-program /usr/local/bin/pinentry-mac<%
+%>pinentry-program <%= ENV["HOMEBREW_PREFIX"] %>/bin/pinentry-mac<%
 else
 %>scdaemon-program /usr/lib/gnupg/scdaemon<%
 end
