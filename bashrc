@@ -112,38 +112,19 @@ else
   fi
 fi
 
-# Handle legacy virtualenvwrapper setup for machines where I'm still using it.
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-  export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python2'
-  source /usr/local/bin/virtualenvwrapper.sh
-else
-  :  # no-op
-fi
-
-# Load Homebrew's tab-completion files for Git, if applicable.
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]
-then
-  source /usr/local/etc/bash_completion.d/git-completion.bash
-else
-  :  # no-op
-fi
-
-# Load Homebrew's tab-completion files for npm, if applicable.
-if [ -f /usr/local/etc/bash_completion.d/npm ]
-then
-  source /usr/local/etc/bash_completion.d/npm
-else
-  :  # no-op
-fi
-
-# Load Ubuntu bash-completion if available.
-if [ -f /usr/share/bash-completion/bash_completion ]
-then
-  source /usr/share/bash-completion/bash_completion
-else
-  :  # no-op
-fi
+tab_completions=(
+  '/usr/local/etc/bash_completion.d/git-completion.bash'
+  '/opt/homebrew/etc/git-completion.bash'
+  '/usr/share/bash-completion/bash_completion'
+)
+for completion_file in "${tab_completions[@]}"; do
+  if [ -f "${completion_file}" ]
+  then
+    source "${completion_file}"
+  else
+    :  # no-op
+  fi
+done
 
 # Load version managers for Ruby (rvm), Python (pyenv) and Node.js (nvm,
 # later), depending on which ones are installed.
