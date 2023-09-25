@@ -33,7 +33,7 @@ function! Toggle_jcm_small_text()
   if has("gui_running")
     if t:jcm_small_text == 0
       if has("gui_macvim")
-        set guifont=Berkeley Mono:h22,Source_Code_Pro:h22
+        set guifont=Berkeley_Mono:h22,Source_Code_Pro:h22
       elseif has("win64") || has("win32") || has("win16")
         set guifont=Berkeley\ Mono:h22,Source\ Code\ Pro:h14
       else
@@ -42,7 +42,7 @@ function! Toggle_jcm_small_text()
       let t:jcm_small_text = 1
     else
       if has("gui_macvim")
-        set guifont=Berkeley Mono:h14,Source_Code_Pro:h14
+        set guifont=Berkeley_Mono:h14,Source_Code_Pro:h14
       elseif has("win64") || has("win32") || has("win16")
         set guifont=Berkeley\ Mono:h9,Source\ Code\ Pro:h9
       else
