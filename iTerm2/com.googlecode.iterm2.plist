@@ -24,6 +24,8 @@
 	<true/>
 	<key>Control</key>
 	<integer>1</integer>
+	<key>ConvertDosNewlines</key>
+	<true/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -39,6 +41,8 @@
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableRendezvous</key>
+	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
 	<false/>
@@ -2519,6 +2523,12 @@ Paste Special.Paste Slowly</string>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
+	<false/>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
