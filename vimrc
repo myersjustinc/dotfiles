@@ -132,6 +132,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'quarto-dev/quarto-vim'
 Plugin 'wuelnerdotexe/vim-astro'
+Plugin 'jparise/vim-graphql'
 
 " Configure airline
 set laststatus=2
