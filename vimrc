@@ -189,7 +189,8 @@ highlight VertSplit ctermbg=Black guibg=Black
 highlight mkdHeading ctermfg=5 gui=bold guifg=indianred
 
 " Ignore temp/OS/dependency files in CtrlP and other situations
-set wildignore+=*/tmp/*,*/.tmp/*,*/node_modules/*,.DS_Store,*/.git/*
+set wildignore+=*/tmp/*,*/.tmp/*,*/node_modules/*,.DS_Store,*/.git/*,*/build/*
+let g:ctrlp_root_markers = ['node_modules', '.env', '.dvc', 'Pipfile', '*.gemspec']
 
 " Always cd to current file's directory
 " Apparently conflicts with some plugins, so watch out
